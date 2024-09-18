@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './style/index.css'
 import '@fontsource/poppins';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Home } from './pages';
+import { Home } from './pages/Home.tsx';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home/>
       }
     ]
