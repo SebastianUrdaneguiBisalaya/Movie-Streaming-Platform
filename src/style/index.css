@@ -1,3 +1,9 @@
+:root {
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-less-black: #1C1C1C;
+}
+
 *,
 *::before,
 *::after {
@@ -11,5 +17,23 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #000;
+    background-color: var(--color-black);
+}
+
+li {
+    list-style: none;
+}
+
+.button {
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-white);
+    border: 0.1rem solid var(--color-white);
+    border-radius: 2rem;
+    height: 3rem;
+}
+
+.button:hover {
+    background: var(--color-white);
+    color: var(--color-black)
 }
