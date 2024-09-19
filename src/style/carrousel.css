@@ -1,0 +1,60 @@
+.movie__carrousel {
+    position: relative;
+    width: 100%;
+    height: min(80vh, 744px);
+    min-height: 520px;
+    display: flex;
+    overflow: hidden;
+}
+
+.movie__carrouselItem {
+    flex-shrink: 0;
+    width: 100%; 
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* .movie__carrousel--active {
+    transform: translateX(100%);
+} */
+
+.movie__carrouselTab {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-white);
+    background-color: var(--color-dark);
+    border: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 15;
+}
+
+.movie__carrouselTabPrev {
+    left: 0;
+    display: flex;
+}
+
+.movie__carrouselTabNext {
+    right: 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.movie__carrousel--progress {
+    position: absolute;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    width: 2rem;
+    height: 2rem;
+    right: 0;
+}
+
+.movie__carrousel--progress svg {
+    transform: rotate(-90deg);
+}
+
+.movie__carrousel--progress circle {
+    transition: stroke-dashoffset 0.1s linear;
+}
