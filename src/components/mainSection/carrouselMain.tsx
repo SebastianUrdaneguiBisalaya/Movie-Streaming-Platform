@@ -52,9 +52,9 @@ export const CarrouselMain = () => {
                         genres: item.genre_ids.map(id => getGenreNameById(id, dataListGenre.genres))
                     };
                 });
-                setMovies(moviesWithGenres);
+                setMovies(moviesWithGenres.slice(0, 5));
             } catch(error) {
-                console.log(error);
+                console.error(error);
             }
         }
 
