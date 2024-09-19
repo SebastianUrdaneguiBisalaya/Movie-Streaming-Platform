@@ -21,6 +21,7 @@
     overflow-x: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    gap: 1.5rem;
 }
 
 .recentlyUpdated__containerScroll::-webkit-scrollbar {
@@ -75,7 +76,7 @@
     font-size: 1.2rem;
 }
 
-.cardMovie__recentlyUpdated--detail p {
+.cardMovie__recentlyUpdated--detail p:first-of-type {
     margin: 0rem;
     font-size: 0.7rem;
     display: -webkit-box;
@@ -84,6 +85,9 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 100%;
 }
 
+.cardMovie__recentlyUpdated--detail p:last-of-type {
+    font-size: 0.7rem;
+    margin: 0.5rem 0rem;
+}
