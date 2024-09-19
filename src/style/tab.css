@@ -24,12 +24,10 @@
     grid-template-columns: repeat(3, 1fr);
     border-radius: 600rem;
     align-items: center;
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
+    height: 3rem;
 }
 
-.first__tab, .second__tab, .third__tab {
+#tab-1, #tab-2, #tab-3 {
     position: relative;
     display: block;
     padding-left: 10px;
@@ -45,6 +43,18 @@
     height: 100%;
 }
 
-.first__tab:hover, .second__tab:hover, .third__tab:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+#tab-1:hover, #tab-2:hover, #tab-3:hover {
+    background-color: var(--color-dark-opacity);
+}
+
+@media (max-width: 660px) {
+    .movie__tab--containerTitle {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .movie__tab--containerOptions {
+        width: 100%;
+    }
 }
