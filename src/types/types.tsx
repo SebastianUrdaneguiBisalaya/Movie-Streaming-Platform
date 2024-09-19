@@ -48,3 +48,25 @@ export type Series = {
     poster_path: string;
     first_air_date: string;
 }
+
+export type PropsCardTrending = {
+    name: string;
+    tags: string[];
+    poster_path: string;
+    first_air_date: string;
+    vote_average: number;
+};
+
+export type MoviesTrending = {
+    genres: string[];
+    id: number;
+    release_date: string;
+    title: string;
+    vote_average: number;
+    poster_path: string;
+};
+
+export type Genres = {
+    id: number;
+    name: string;
+};

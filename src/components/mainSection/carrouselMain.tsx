@@ -1,19 +1,10 @@
 import { useEffect, useState } from "react";
 import { Carrousel } from "./carrousel";
-import { type Movie, type Movies } from "../../types/types";
-
-type Genres = {
-    id: number;
-    name: string;
-};
+import type { Movie, Movies } from "../../types/types";
+import { getGenreNameById } from "../../utils/getGenreByName";
 
 export const CarrouselMain = () => {
     const [movies, setMovies] = useState<Movies[]>([]);
-    
-    function getGenreNameById(id:number, genre:Genres[]) {
-        const genreI = genre.find((item) => item.id === id);
-        return genreI ? genreI.name :  "Unknown"
-    }
     
     useEffect(() => {
         const getMoviesMorePopular = async() => {

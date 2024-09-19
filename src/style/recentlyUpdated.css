@@ -91,3 +91,11 @@
     font-size: 0.7rem;
     margin: 0.5rem 0rem;
 }
+
+
+@media (max-width: 900px) {
+    .recentlyUpdated__buttonNext--icon {
+        width: 3rem;
+        height: 3rem;
+    }
+}
