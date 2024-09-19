@@ -92,7 +92,7 @@ export const Carrousel = ({movies, interval}:MovieCarrouselProps) => {
                                     cx="18"
                                     cy="18"
                                     fill="none"
-                                    stroke="white"
+                                    stroke="#FF0000"
                                     strokeWidth="4"
                                     strokeDasharray="100"
                                     strokeDashoffset={100 - progress}

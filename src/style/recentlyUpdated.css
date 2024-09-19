@@ -10,9 +10,42 @@
     padding: 0rem 2rem;
 }
 
+.recentlyUpdated__containerScrollWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
 .recentlyUpdated__containerScroll {
     display: flex;
     flex-direction: row;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.recentlyUpdated__containerScroll::-webkit-scrollbar {
+    display: none;
+}
+
+.recentlyUpdated__buttonNext {
+    background-color: var(--color-dark);
+    border: none;
+    cursor: pointer;
+}
+
+.recentlyUpdated__buttonNext--icon {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.svg-front {
+    position: absolute;
 }
 
 .cardMovie__recentlyUpdated {

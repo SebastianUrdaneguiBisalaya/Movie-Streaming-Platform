@@ -14,10 +14,6 @@
     transition: transform 0.5s ease-in-out;
 }
 
-/* .movie__carrousel--active {
-    transform: translateX(100%);
-} */
-
 .movie__carrouselTab {
     position: absolute;
     top: 50%;
