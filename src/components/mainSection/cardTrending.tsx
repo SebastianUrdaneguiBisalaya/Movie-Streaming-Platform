@@ -49,8 +49,8 @@ export const CardTrending = ({
                 </div>
                 <div className="cardMovie__trending--moreDetails--right">
                     {
-                        tags.slice(0,3)?.map((tag) => (
-                            <span className="cardMovie__trendingTags">{tag}</span>
+                        tags.slice(0,3)?.map((tag, index) => (
+                            <span key={`${tag}-${index}`} className="cardMovie__trendingTags">{tag}</span>
                         ))
                     }
                 </div>
