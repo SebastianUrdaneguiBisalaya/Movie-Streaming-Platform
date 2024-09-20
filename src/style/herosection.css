@@ -1,182 +1,182 @@
 .herosection {
-    height: 50vw;
-    position: relative;
-    width: 100%;
-    height: min(80vh, 744px);
-    min-height: 520px;
-    overflow: hidden;
+  height: 50vw;
+  position: relative;
+  width: 100%;
+  height: min(80vh, 744px);
+  min-height: 520px;
+  overflow: hidden;
 }
 
 .herosection__background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .herosection__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
 }
 
 .herosection__content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1.5rem;
-    flex-direction: column;
-    align-items: flex-start;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .herosection__callToActions {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    justify-content: center;
-    padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .button__callToAction--now {
-    background-color: var(--color-red);
-    color: var(--color-white);
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: none;
-    font-weight: 900;
-    font-size: 1rem;
-    display: flex;
-    gap: 0.8rem;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 1s ease-in-out;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 900;
+  font-size: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
 }
 
 .button__callToAction--now:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .button__callToAction--later {
-    border: 0.1rem solid var(--color-red);
-    background: transparent;
-    color: var(--color-white);
-    padding: 1rem;
-    font-weight: 900;
-    font-size: 1rem;
-    border-radius: 0.5rem;
-    display: flex;
-    gap: 0.8rem;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 1s ease-in-out;
+  border: 0.1rem solid var(--color-red);
+  background: transparent;
+  color: var(--color-white);
+  padding: 1rem;
+  font-weight: 900;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
 }
 
 .button__callToAction--later:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .herosection__contentDetail {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 0rem 4rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0rem 4rem;
 }
 
 .movie__title {
-    color: var(--color-white);
-    width: 70%;
+  color: var(--color-white);
+  width: 70%;
 }
 
 .movie__tags {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    color: var(--color-white);
-    font-size: 0.9rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    width: 70%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  color: var(--color-white);
+  font-size: 0.9rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 70%;
 }
 
 .movie__tagsOfKindContainerMinor {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .movie__tag {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .movie__description {
-    color: var(--color-white);
-    font-size: 0.9rem;
-    width: 70%;
+  color: var(--color-white);
+  font-size: 0.9rem;
+  width: 70%;
 }
 
 .movie__tagsOfKind {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .movie__tagOfKind {
-    padding: 0.25rem 0.5rem;
-    color: var(--color-black);
-    background-color: var(--color-white);
-    border-radius: 2rem;
-    font-weight: 700;
-    padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border-radius: 2rem;
+  font-weight: 700;
+  padding: 0.5rem;
 }
 
 @media (max-width: 900px) {
-    .herosection__contentDetail {
-        padding: 0rem;
-        width: 80%;    
-    }
+  .herosection__contentDetail {
+    padding: 0rem;
+    width: 80%;
+  }
 
-    .movie__title {
-        font-size: 1.6rem;
-        width: 100%;
-    }
-    .movie__tags {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        font-size: 0.7rem;
-        width: 100%;
-    }
-    .movie__description {
-        color: var(--color-white);
-        font-size: 0.7rem;
-        width: 100%;
-    }
-    .movie__tagOfKind {
-        font-size: 0.7rem;
-    }
-    .button__callToAction--now {
-        padding: 0.8rem;
-        font-weight: 900;
-        font-size: 0.8rem;
-    }
-    .button__callToAction--later {
-        padding: 0.8rem;
-        font-weight: 900;
-        font-size: 0.8rem;
-    }
+  .movie__title {
+    font-size: 1.6rem;
+    width: 100%;
+  }
+  .movie__tags {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 0.7rem;
+    width: 100%;
+  }
+  .movie__description {
+    color: var(--color-white);
+    font-size: 0.7rem;
+    width: 100%;
+  }
+  .movie__tagOfKind {
+    font-size: 0.7rem;
+  }
+  .button__callToAction--now {
+    padding: 0.8rem;
+    font-weight: 900;
+    font-size: 0.8rem;
+  }
+  .button__callToAction--later {
+    padding: 0.8rem;
+    font-weight: 900;
+    font-size: 0.8rem;
+  }
 }

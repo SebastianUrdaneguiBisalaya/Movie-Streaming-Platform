@@ -1,107 +1,107 @@
 .movie__trending {
-    display: flex;
-    justify-content: center;
-    margin: 4rem 0rem;
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0rem;
 }
 
 .trending__container {
-    max-width: 1200px;
-    width: 100%;
-    padding: 0rem 2rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0rem 2rem;
 }
 
 .trending__containerTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .trending__containerMovies {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin: 2rem 0rem;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 2rem 0rem;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 100%;
 }
 
 .cardMovie__trending {
-    min-width: 21.875rem;
-    height: 22rem;
+  min-width: 21.875rem;
+  height: 22rem;
 }
 
 .cardMovie__trending--button {
-    border: none;
-    border-radius: 0.7rem;
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
+  border: none;
+  border-radius: 0.7rem;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
 }
 
 .cardMovie__trending img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.7rem;
-    position: absolute;
-    top: 0;
-    left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.7rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .cardMovie__trending--detail {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
 }
 
 .cardMovie__trending--detail--titles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.3rem;
-    color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--color-white);
 }
 
 @media (max-width: 660px) {
-    .cardMovie__trending--detail {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
+  .cardMovie__trending--detail {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 
 .cardMovie__trending--moreDetails {
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }
 
 .cardMovie__trending--moreDetails--left {
-    flex: 1;
-    margin: 0.5rem 0rem;
+  flex: 1;
+  margin: 0.5rem 0rem;
 }
 
 .cardMovie__trending--moreDetails--right {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    margin: 0.5rem 0rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin: 0.5rem 0rem;
 }
 
 .cardMovie__trendingTags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    background-color: var(--color-red);
-    border-radius: 0.3rem;
-    padding: 0.3rem 0.8rem;
-    color: var(--color-white);
-    font-size: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background-color: var(--color-red);
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.8rem;
+  color: var(--color-white);
+  font-size: 0.7rem;
 }
