@@ -9,6 +9,7 @@ interface DataItem {
     category: string;
     poster_path: string;
     name?:string
+    episode?:string
 }
 
 // interface TabPros {
@@ -55,6 +56,7 @@ export const Tab = () => {
             const dataSeriesTransformed = dataSeries.results.map((item:DataItem) => ({
                 ...item,
                 category: "Series",
+                episode: "EP. 1"
             }))
             console.log(dataSeriesTransformed)
             allData.push(...dataSeriesTransformed);
@@ -96,14 +98,14 @@ export const Tab = () => {
                 <div className="cardModelBasicMovie__container--firstRow">
                 {firstRowFilteredData.map((item) => {
                     return (
-                        <CardMovie key={item.id} title={item.title} name={item.name} poster_path={item.poster_path} vote_average={item.vote_average} episode={""} />
+                        <CardMovie key={item.id} title={item.title} name={item.name} poster_path={item.poster_path} vote_average={item.vote_average} episode={item.episode} />
                     )
                 })}
                 </div>
                 <div className="cardModelBasicMovie__container--secondRow">
                 {secondRowFilteredData.map((item) => {
                     return (
-                        <CardMovie key={item.id} title={item.title} name={item.name} poster_path={item.poster_path} vote_average={item.vote_average} episode={""} />
+                        <CardMovie key={item.id} title={item.title} name={item.name} poster_path={item.poster_path} vote_average={item.vote_average} episode={item.episode} />
                     )
                 })}
                 </div>

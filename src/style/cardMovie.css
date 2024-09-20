@@ -21,9 +21,34 @@
     background-color: transparent;
 }
 
-.cardModelBasicMovie img{
+.cardModelBasicSeries {
+    display: flex;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
     width: 17rem;
     height: 20.5rem;
+}
+
+.cardModelBasicMovie img, .cardModelBasicSeries img{
+    width: 17rem;
+    height: 20.5rem;
+    border-radius: 1rem;
+}
+
+.cardSeries {
+    position: absolute;
+}
+
+.cardModelBasicMovie__detailEpisode {
+    position: relative;
+    padding: 0.3rem;
+    left: 1rem;
+    top: 1rem;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    font-size: 0.7rem;
     border-radius: 1rem;
 }
 
@@ -50,9 +75,20 @@
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;
-    align-self: center;
+    align-self: flex-start;
     gap: 0.5rem;
     padding: 0.2rem 0.3rem;
     font-size: 0.8rem;
     word-wrap: break-word;
+}
+
+.cardModelBasicMovie__moreDetail {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.cardModelBasicMovie__detailHD {
+    background-color: var(--color-red);
+    color: var(--color-white);
 }
