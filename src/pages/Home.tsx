@@ -11,8 +11,8 @@ export const Home = (): JSX.Element => {
       <CarrouselMain />
       <RecentlyUpdated />
       <Trending />
-      <NewReleaseMovies/>
-      <NewReleaseSeries/>
+      <NewReleaseMovies />
+      <NewReleaseSeries />
       <TabRecommended />
     </>
   );

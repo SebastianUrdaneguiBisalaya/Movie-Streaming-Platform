@@ -84,7 +84,7 @@ export type PropReleases = {
   title: string;
   data: PropCard[];
   onClick: () => void;
-}
+};
 
 export interface DataItem {
   id: number;

@@ -1,29 +1,29 @@
 .movies__newRelease {
-    display: flex;
-    justify-content: center;
-    margin: 4rem 0rem;
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0rem;
 }
 
 .newRelease__container {
-    max-width: 1200px;
-    width: 100%;
-    padding: 0rem 2rem;
-    margin-top: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0rem 2rem;
+  margin-top: 1.5rem;
 }
 
 .newRelease__containerTitle {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .newRelease__containerMovies {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin: 1rem 0rem;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 1rem 0rem;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 100%;
 }
