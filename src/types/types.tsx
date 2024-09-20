@@ -70,3 +70,28 @@ export type Genres = {
   id: number;
   name: string;
 };
+
+export type PropCard = {
+  id?: number;
+  title: string;
+  poster_path: string;
+  vote_average: number;
+  episode?: string;
+  name?: string;
+};
+
+export type PropReleases = {
+  title: string;
+  data: PropCard[];
+  onClick: () => void;
+}
+
+export interface DataItem {
+  id: number;
+  title: string;
+  vote_average: number;
+  category: string;
+  poster_path: string;
+  name?: string;
+  episode?: string;
+}

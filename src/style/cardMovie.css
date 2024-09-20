@@ -11,6 +11,10 @@
 .cardModelBasicMovie__containerCard {
   min-width: 17rem;
   min-height: 20.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 }
 
 .cardModelBasicMovie {

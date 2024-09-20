@@ -1,22 +1,9 @@
 import { ButtonViewAll } from "../../utils/buttonViewAll";
 import { useEffect, useState } from "react";
 import { CardMovie } from "./cardMovie";
+import { type DataItem } from "../../types/types";
 
-interface DataItem {
-  id: number;
-  title: string;
-  vote_average: number;
-  category: string;
-  poster_path: string;
-  name?: string;
-  episode?: string;
-}
-
-// interface TabPros {
-//     data: DataItem[];
-// }
-
-export const Tab = () => {
+export const TabRecommended = () => {
   const [activeTab, setActiveTab] = useState("Movies");
   const [data, setData] = useState<DataItem[]>([]);
 
@@ -68,7 +55,6 @@ export const Tab = () => {
           episode: "EP. 1",
         })
       );
-      console.log(dataSeriesTransformed);
       allData.push(...dataSeriesTransformed);
     };
 

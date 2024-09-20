@@ -1,9 +1,9 @@
-//type Props = {}
-// props: Props
 import { CarrouselMain } from "../components/mainSection/carrouselMain";
 import { RecentlyUpdated } from "../components/mainSection/recentlyUpdated";
 import { Trending } from "../components/mainSection/trending";
-import { Tab } from "../components/mainSection/tab";
+import { NewReleaseMovies } from "../components/mainSection/newReleaseMovies";
+import { NewReleaseSeries } from "../components/mainSection/newRealeaseSeries";
+import { TabRecommended } from "../components/mainSection/tabRecommended";
 
 export const Home = (): JSX.Element => {
   return (
@@ -11,7 +11,9 @@ export const Home = (): JSX.Element => {
       <CarrouselMain />
       <RecentlyUpdated />
       <Trending />
-      <Tab />
+      <NewReleaseMovies/>
+      <NewReleaseSeries/>
+      <TabRecommended />
     </>
   );
 };

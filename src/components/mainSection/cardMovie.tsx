@@ -1,10 +1,4 @@
-type PropCard = {
-  title: string;
-  poster_path: string;
-  vote_average: number;
-  episode?: string;
-  name?: string;
-};
+import { type PropCard } from "../../types/types";
 
 export const CardMovie = ({
   title,
