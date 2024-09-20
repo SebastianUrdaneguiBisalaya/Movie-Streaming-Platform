@@ -48,7 +48,8 @@
 #tab-1:hover,
 #tab-2:hover,
 #tab-3:hover {
-  background-color: var(--color-dark-opacity);
+  background-color: var(--color-red);
+  color: var(--color-white);
 }
 
 @media (max-width: 660px) {

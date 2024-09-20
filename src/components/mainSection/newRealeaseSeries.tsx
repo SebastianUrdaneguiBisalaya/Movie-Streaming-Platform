@@ -25,10 +25,16 @@ export const NewReleaseSeries = () => {
     getSeriesNewRelease();
   }, []);
   return (
-    <RenderReleases
-      title="New Release - Series"
-      data={data}
-      onClick={() => console.log("Hello World")}
-    />
+    <>
+      {
+        data.length > 0 && (
+          <RenderReleases
+          title="New Release - Series"
+          data={data}
+          onClick={() => console.log("Hello World")}
+          />
+        )
+      }
+    </>
   );
 };
