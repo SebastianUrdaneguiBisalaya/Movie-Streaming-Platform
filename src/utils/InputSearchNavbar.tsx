@@ -1,4 +1,11 @@
+import { useState } from "react";
+
 export default function InputSearchNavbar(): JSX.Element {
+  const [valueSearch, setValueSearch] = useState<string>("");
+
+  const handleSearch = ():void => {
+    console.log(valueSearch)
+  }
   return (
     <div
       style={{
@@ -11,8 +18,10 @@ export default function InputSearchNavbar(): JSX.Element {
         className="navbar__itemSearch"
         type="text"
         placeholder="Search movies..."
+        value={valueSearch}
+        onChange={(event) => setValueSearch(event.target.value)}
       />
-      <button className="navbar__buttonSearch">
+      <button className="navbar__buttonSearch" onClick={handleSearch}>
         <svg
           width="21"
           height="20"
