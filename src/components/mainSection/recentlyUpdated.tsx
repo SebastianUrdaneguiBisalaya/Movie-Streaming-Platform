@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef} from "react";
 import { CardRecentlyUpdated } from "./cardRecentlyUpdated";
 import { Serie } from "../../types/types";
 
-export const RecentlyUpdated = (): JSX.Element => {
-  const [data, setData] = useState<Serie[]>([]);
+export const RecentlyUpdated = ({recentlyUpdated}:{recentlyUpdated: Serie[]}): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
   const handleNext = () => {
     if (containerRef.current) {
@@ -11,30 +10,9 @@ export const RecentlyUpdated = (): JSX.Element => {
     }
   };
 
-  useEffect(() => {
-    const getRecentlyUpdated = async () => {
-      const response = await fetch(
-        "https://api.themoviedb.org/3/tv/on_the_air?language=en-US&page=1",
-        {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_ACCESS_TOKEN_READ}`,
-          },
-        }
-      );
-      if (!response.ok) {
-        throw new Error("Something went wrong when fetching recently updated");
-      }
-      const dataResponse = await response.json();
-      setData(dataResponse.results.slice(0, 10));
-    };
-
-    getRecentlyUpdated();
-  }, []);
   return (
     <section className="movie__recentlyUpdated">
-      {data.length > 0 && (
+      {recentlyUpdated?.length > 0 && (
         <div className="recentlyUpdated__container">
           <h2>Recently Updated</h2>
           <div className="recentlyUpdated__containerScrollWrapper">
@@ -42,7 +20,7 @@ export const RecentlyUpdated = (): JSX.Element => {
               className="recentlyUpdated__containerScroll"
               ref={containerRef}
             >
-              {data.map((item, index) => (
+              {recentlyUpdated.map((item, index) => (
                 <CardRecentlyUpdated
                   key={index}
                   name={item.name}
