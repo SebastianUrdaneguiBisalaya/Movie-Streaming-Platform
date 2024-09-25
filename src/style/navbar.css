@@ -115,6 +115,10 @@
   font-weight: 600;
 }
 
+.navbar__item:hover {
+  color: var(--color-red);
+}
+
 .navbar__itemSearch {
   display: flex;
   border-radius: 1.5rem;
