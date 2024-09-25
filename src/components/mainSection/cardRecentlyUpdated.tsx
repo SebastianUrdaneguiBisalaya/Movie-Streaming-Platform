@@ -1,4 +1,5 @@
 import { type Series } from "../../types/types";
+import { Link } from "react-router-dom";
 
 export const CardRecentlyUpdated = ({
   name,
@@ -7,7 +8,7 @@ export const CardRecentlyUpdated = ({
   first_air_date,
 }: Series) => {
   return (
-    <div className="cardMovie__recentlyUpdated">
+    <Link to={"/detail"} className="cardMovie__recentlyUpdated">
       <div className="cardMovie__recentlyUpdated--img">
         <img src={poster_path} alt="" />
       </div>
@@ -16,6 +17,6 @@ export const CardRecentlyUpdated = ({
         <p>{overview}</p>
         <p>{first_air_date}</p>
       </div>
-    </div>
+    </Link>
   );
 };

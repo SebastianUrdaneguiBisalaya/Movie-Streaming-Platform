@@ -1,5 +1,7 @@
 export const MovieComments = () => {
   return (
-    <div>movieComments</div>
+    <div className="movieComments">
+      <h2>Comments</h2>
+    </div>
   )
 }

@@ -1,5 +1,7 @@
 export const MoviesRecommended = () => {
   return (
-    <div>moviesRecommended</div>
+    <div className="moviesToRecommend">
+      <h2>You may also like</h2>
+    </div>
   )
 }
