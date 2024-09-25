@@ -1,5 +1,7 @@
+import { MainDetailSection } from "../components/DetailSection/";
+
 export const DetailMovie = () => {
     return (
-      <div>mainDetailSection</div>
+      <MainDetailSection />
     )
   }
