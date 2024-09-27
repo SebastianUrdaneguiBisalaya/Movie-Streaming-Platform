@@ -4,7 +4,8 @@ import App from "./App.tsx";
 import "./style/index.css";
 import "@fontsource/poppins";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, DetailMovie, SearchMovies } from "./pages";
+import { Home, DetailMovie, SearchMoviesSection } from "./pages";
+import { SearchContextProvider } from "./context/searchMovieProvider.tsx";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/search",
-        element: <SearchMovies />,
+        element: <SearchMoviesSection />,
       }
     ],
   },
@@ -29,6 +30,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <SearchContextProvider>
+      <RouterProvider router={router} />
+    </SearchContextProvider>
   </StrictMode>
 );

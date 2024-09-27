@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import type { PropCard } from "../types/types";
-import { CardMovie } from "../components/mainSection/cardMovie";
+import { type PropCard } from "../../types/types";
+import { CardMovie } from "../mainSection/cardMovie";
 
 export const SearchMovies = (): JSX.Element => {
     const [movies, setMovies] = useState<PropCard[]>([]);
@@ -36,9 +36,10 @@ export const SearchMovies = (): JSX.Element => {
   return (
     <section className="section__searchMovie">
         <div className="search__container">
+            <h2 style={{textAlign: "left"}}>Search Results</h2>
         {
           movieChunks.map((chunk, index) => (
-            <div key={index} className="movies-group" style={{display: 'flex', justifyContent: "space-between"}}>
+            <div key={index} className="movies__group" style={{display: 'flex', justifyContent: "space-between"}}>
               {chunk.map((item) => (
                 <CardMovie
                   key={item.id}

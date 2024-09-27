@@ -95,3 +95,8 @@ export interface DataItem {
   name?: string;
   episode?: string;
 }
+
+export interface SearchContextType {
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+}

@@ -1,10 +1,17 @@
 import { useState } from "react";
+import { useSearchMovie } from "../hooks/useSearchMovie";
 
 export default function InputSearchNavbar(): JSX.Element {
-  const [valueSearch, setValueSearch] = useState<string>("");
+  const {setSearchQuery} = useSearchMovie();
+  const [valueSearch, setValueSearch] = useState<string>('');
 
   const handleSearch = ():void => {
-    console.log(valueSearch)
+    setSearchQuery(valueSearch)
+  }
+
+  const handleWriteSearch = (val:string):void => {
+    setValueSearch(val)
+    setSearchQuery(val)
   }
   return (
     <div
@@ -19,7 +26,7 @@ export default function InputSearchNavbar(): JSX.Element {
         type="text"
         placeholder="Search movies..."
         value={valueSearch}
-        onChange={(event) => setValueSearch(event.target.value)}
+        onChange={(event) => handleWriteSearch(event.target.value)}
       />
       <button className="navbar__buttonSearch" onClick={handleSearch}>
         <svg
