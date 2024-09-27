@@ -4,6 +4,22 @@
   --color-less-black: #1c1c1c;
   --color-red: #ff0000;
   --color-dark-opacity: rgba(0, 0, 0, 0.5);
+  ::-webkit-scrollbar { display: none}
+}
+
+.scrollable-component {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollable-component::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y otros */
+}
+
+/* Mostrar el scrollbar cuando el usuario hace scroll */
+.scrolling::-webkit-scrollbar {
+  display: block;
+  width: 8px;
 }
 
 *,

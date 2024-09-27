@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import "./style/index.css";
 import "@fontsource/poppins";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, DetailMovie } from "./pages";
+import { Home, DetailMovie, SearchMovies } from "./pages";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/detail",
         element: <DetailMovie />,
+      },
+      {
+        path: "/search",
+        element: <SearchMovies />,
       }
     ],
   },
