@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useSearchMovie } from "../hooks/useSearchMovie";
+import { debounce } from "../utils/debounce";
 
 export default function InputSearchNavbar(): JSX.Element {
   const {setSearchQuery} = useSearchMovie();
@@ -9,9 +10,14 @@ export default function InputSearchNavbar(): JSX.Element {
     setSearchQuery(valueSearch)
   }
 
+  const debouncedHandleSearch = useMemo(
+    () => debounce((val:string) => setSearchQuery(val), 700),
+    [setSearchQuery]
+  )
+
   const handleWriteSearch = (val:string):void => {
     setValueSearch(val)
-    setSearchQuery(val)
+    debouncedHandleSearch(val)
   }
   return (
     <div
