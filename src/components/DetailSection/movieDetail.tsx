@@ -1,25 +1,44 @@
 import { useEffect, useState } from "react"
 import { type MovieDetailType } from "../../types/types";
+import { useNavigate } from "react-router-dom";
 
-export const MovieDetail = () => {
-
+export const MovieDetail = ({id}:{id: number}) => {
+  
+  const navigate = useNavigate();
   const [movieDetail, setMovieDetail] = useState<MovieDetailType>();
+  
   useEffect(() => {
-    const fetchData = async ():Promise<void> => {
-      const movieDetailResponse = await fetch("https://api.themoviedb.org/3/movie/283317?append_to_response=credits&language=en-US",
-        {
-          method: "GET",
-          headers: {
-            accept: "application/json",
-            Authorization: `Bearer ${import.meta.env.VITE_ACCESS_TOKEN_READ}`,
-          },
+    const fetchData = async (): Promise<void> => {
+      try {
+        const movieDetailResponse = await fetch(
+          `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits&language=en-US`,
+          {
+            method: "GET",
+            headers: {
+              accept: "application/json",
+              Authorization: `Bearer ${import.meta.env.VITE_ACCESS_TOKEN_READ}`,
+            },
+          }
+        );
+  
+        if (!movieDetailResponse.ok) {
+          if (movieDetailResponse.status === 404) {
+            navigate("/404", {replace: true}); 
+          } else {
+            throw new Error("Failed to fetch data");
+          }
+          return; 
         }
-      )
-      const result = await movieDetailResponse.json()
-      setMovieDetail(result)
-    }
-    fetchData()
-  }, [])
+  
+        const result = await movieDetailResponse.json();
+        setMovieDetail(result);
+      } catch (error) {
+        navigate("/404"); 
+      }
+    };
+  
+    fetchData();
+  }, [id, navigate]);
 
   return (
     <div className="movieDetailGrid">

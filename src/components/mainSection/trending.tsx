@@ -19,6 +19,7 @@ export const Trending = ({moviesTrending}:{moviesTrending: MoviesTrending[]}): J
           <div className="trending__containerMovies">
             {moviesTrending?.map((item, index) => (
               <CardTrending
+                id={item.id}
                 key={index}
                 name={item.title}
                 tags={item.genres}

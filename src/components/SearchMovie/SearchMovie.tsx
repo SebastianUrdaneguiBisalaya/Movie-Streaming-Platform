@@ -22,7 +22,6 @@ export const SearchMovies = (): JSX.Element => {
                 );
                 const result = await moviesMorePopularResponse.json();
                 setMovies(result.results)
-                console.log(result.results)
         }
         fetchData();
       }, [searchQuery]);
@@ -44,6 +43,7 @@ export const SearchMovies = (): JSX.Element => {
             <div key={index} className="movies__group" style={{display: 'flex', justifyContent: "space-between"}}>
               {chunk.map((item) => (
                 <CardMovie
+                  id={item.id}
                   key={item.id}
                   title={item.title}
                   poster_path={item.poster_path}

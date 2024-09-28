@@ -17,6 +17,7 @@ export const RenderReleases = ({ title, data, onClick }: PropReleases) => {
             <div className="cardModelBasicMovie__container--firstRow">
               {data?.map((item) => (
                 <CardMovie
+                  id={item.id}
                   key={item.id}
                   title={item.title}
                   name={item.name}

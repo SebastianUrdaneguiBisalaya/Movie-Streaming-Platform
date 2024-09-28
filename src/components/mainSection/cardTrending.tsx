@@ -1,6 +1,8 @@
 import { type PropsCardTrending } from "../../types/types";
+import { Link } from "react-router-dom";
 
 export const CardTrending = ({
+  id,
   name,
   tags,
   poster_path,
@@ -9,7 +11,7 @@ export const CardTrending = ({
 }: PropsCardTrending): JSX.Element => {
   return (
     <div className="cardMovie__trending">
-      <button className="cardMovie__trending--button">
+      <Link to={`detail/${id}`} className="cardMovie__trending--button">
         <img
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
           alt="Poster Path of the movie"
@@ -102,7 +104,7 @@ export const CardTrending = ({
             {vote_average.toFixed(1)}
           </p>
         </div>
-      </button>
+      </Link>
       <div className="cardMovie__trending--moreDetails">
         <div className="cardMovie__trending--moreDetails--left">
           <h3>{name}</h3>

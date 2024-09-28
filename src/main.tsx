@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import "./style/index.css";
 import "@fontsource/poppins";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, DetailMovie, SearchMoviesSection } from "./pages";
+import { Home, DetailMovie, Error404} from "./pages";
 import { SearchContextProvider } from "./context/searchMovieProvider.tsx";
 
 const router = createBrowserRouter([
@@ -16,16 +16,16 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/detail",
-        element: <DetailMovie />,
-      },
-      {
-        path: "/search",
-        element: <SearchMoviesSection />,
-      }
     ],
   },
+  {
+    path: "/detail/:id",
+    element: <DetailMovie />,
+  },
+  {
+    path: "/*",
+    element: <Error404 />,
+  }
 ]);
 
 createRoot(document.getElementById("root")!).render(

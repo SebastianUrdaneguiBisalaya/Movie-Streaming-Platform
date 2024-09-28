@@ -43,6 +43,7 @@ export type Serie = {
 };
 
 export type Series = {
+  id: number
   name: string;
   overview: string;
   poster_path: string;
@@ -50,6 +51,7 @@ export type Series = {
 };
 
 export type PropsCardTrending = {
+  id: number;
   name: string;
   tags: string[];
   poster_path: string;
@@ -136,4 +138,19 @@ export type MovieDetailType = {
   poster_path: string;
   production_countries: MovieProductionCountryDetail[];
   credits: CreditsCastMovie[];
+}
+
+export type MovieComment = {
+  author: string,
+  author_details: {
+    name: string,
+    username: string,
+    avatar_path: null,
+    rating: number
+  },
+  content: string,
+  created_at: string,
+  id: string,
+  updated_at: string,
+  url: string
 }

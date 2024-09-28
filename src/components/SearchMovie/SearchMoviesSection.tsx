@@ -1,4 +1,4 @@
-import { SearchMovies } from "../components/SearchMovie/SearchMovie"
+import { SearchMovies } from "./SearchMovie"
 
 export const SearchMoviesSection = (): JSX.Element => {
   return (

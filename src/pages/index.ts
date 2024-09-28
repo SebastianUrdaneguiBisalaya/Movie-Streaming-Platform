@@ -1,3 +1,4 @@
 export * from "./Home";
 export * from "./DetailMovie";
-export * from "./SearchMoviesSection";
+// export * from "../components/SearchMovie/SearchMoviesSection";
+export * from "./Error404";

@@ -9,7 +9,6 @@ export const RecentlyUpdated = ({recentlyUpdated}:{recentlyUpdated: Serie[]}): J
       containerRef.current.scrollLeft += containerRef.current.offsetWidth;
     }
   };
-
   return (
     <section className="movie__recentlyUpdated">
       {recentlyUpdated?.length > 0 && (
@@ -23,6 +22,7 @@ export const RecentlyUpdated = ({recentlyUpdated}:{recentlyUpdated: Serie[]}): J
               {recentlyUpdated.map((item, index) => (
                 <CardRecentlyUpdated
                   key={index}
+                  id={item.id}
                   name={item.name}
                   overview={item.overview}
                   poster_path={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}

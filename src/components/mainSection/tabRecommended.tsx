@@ -20,6 +20,7 @@ export const TabRecommended = ({allRecommended}:{allRecommended: DataItem[]}): J
           {firstRowFilteredData?.map((item) => {
             return (
               <CardMovie
+                id={item.id}
                 key={item.id}
                 title={item.title}
                 name={item.name}
@@ -34,6 +35,7 @@ export const TabRecommended = ({allRecommended}:{allRecommended: DataItem[]}): J
           {secondRowFilteredData?.map((item) => {
             return (
               <CardMovie
+                id={item.id}
                 key={item.id}
                 title={item.title}
                 name={item.name}

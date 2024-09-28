@@ -1,6 +1,8 @@
 import { type PropCard } from "../../types/types";
+import { Link } from "react-router-dom";
 
 export const CardMovie = ({
+  id,
   title,
   name,
   poster_path,
@@ -9,7 +11,7 @@ export const CardMovie = ({
 }: PropCard) => {
   return (
     <div className="cardModelBasicMovie__containerCard">
-      <button
+      <Link to={`/detail/${id}`}
         className={episode ? "cardModelBasicSeries" : "cardModelBasicMovie"}
       >
         <img
@@ -22,7 +24,7 @@ export const CardMovie = ({
             <p>{episode}</p>
           </div>
         )}
-      </button>
+      </Link>
       <div className="cardModelBasicMovie__detail">
         <h5>{title ? title : name}</h5>
         <div className="cardModelBasicMovie__moreDetail">
