@@ -100,3 +100,40 @@ export interface SearchContextType {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
 }
+
+export type MovieGenreDetail = {
+  id: number;
+  name: string
+}
+
+export type MovieProductionCountryDetail = {
+  iso_3166_1: string;
+  name: string;
+}
+
+export type CreditsCastMovie = {
+  adult: boolean,
+  gender: number,
+  id: number,
+  known_for_department: string,
+  name: string,
+  original_name: string,
+  popularity: number,
+  profile_path: string,
+  cast_id: number,
+  character: string,
+  credit_id: string,
+  order: number
+}
+
+export type MovieDetailType = {
+  id: number;
+  title: string;
+  overview: string;
+  vote_average: number;
+  release_date: string;
+  genres: MovieGenreDetail[];
+  poster_path: string;
+  production_countries: MovieProductionCountryDetail[];
+  credits: CreditsCastMovie[];
+}

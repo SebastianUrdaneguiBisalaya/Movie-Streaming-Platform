@@ -1,27 +1,47 @@
+import { useEffect, useState } from "react"
+import { type MovieDetailType } from "../../types/types";
+
 export const MovieDetail = () => {
+
+  const [movieDetail, setMovieDetail] = useState<MovieDetailType>();
+  useEffect(() => {
+    const fetchData = async ():Promise<void> => {
+      const movieDetailResponse = await fetch("https://api.themoviedb.org/3/movie/283317?append_to_response=credits&language=en-US",
+        {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization: `Bearer ${import.meta.env.VITE_ACCESS_TOKEN_READ}`,
+          },
+        }
+      )
+      const result = await movieDetailResponse.json()
+      setMovieDetail(result)
+    }
+    fetchData()
+  }, [])
+
   return (
     <div className="movieDetailGrid">
       <div className="movieDetailGrid__image">
-        <img src="https://www.infobae.com/new-resizer/1ZqYTZHm-p05-mDA4nmw4dK2NKk=/992x1323/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/VW6GWH7SPFG67A4SJP3E7KVBTI.jpeg" alt="" />
+        <img src={`https://image.tmdb.org/t/p/w500/${movieDetail?.poster_path}`} alt="" />
       </div>
 
       <div className="movieDetailGrid__container">  
         <div className="row row__1">
-            <h4>Rápidos y Furiosos</h4>
+            <h4>{movieDetail?.title}</h4>
             <button className="button__addFavorite">+ Add to Favorite</button>
         </div>
         
         <div className="row row__2">
           <div className="column movieDetail__tag--genre">
-              <span className="movieDetail__tagOfKind">
-                    Drama
-              </span>
-              <span className="movieDetail__tagOfKind">
-                    Science Fiction
-              </span>
-              <span className="movieDetail__tagOfKind">
-                    Action
-              </span>
+              {
+                movieDetail?.genres?.map((item) => item.name)?.slice(0,3)?.map((item) => (
+                  <span key={item} className="movieDetail__tagOfKind">
+                    {item}
+                  </span>
+                ))
+              }
           </div>
           <div className="column">
             <div className="movieDetail__tag">
@@ -89,7 +109,7 @@ export const MovieDetail = () => {
                       fill="white"
                     />
                   </svg>
-                  2024-01-01
+                  {movieDetail?.release_date}
               </div>
               <div className="movieDetail__tag">
                   <svg
@@ -104,37 +124,43 @@ export const MovieDetail = () => {
                       fill="white"
                     />
                   </svg>
-                  8.0
+                  {movieDetail?.vote_average}
               </div>
             </div>
         </div>
 
         <div className="row row__3">
-          <p>In a ruined and toxic future, a community exists in a giant underground silo that plunges 
-          hundreds of stories deep. There, men and women live in a society full of regulations they 
-          believe are meant to protect them.</p>
+          <p>{movieDetail?.overview}</p>
         </div>
         
         <div className="row row__4">
           <div className="itemDescription">
             <p className="itemDescription__title">Country:</p>
-            <p className="itemDescription__description">United States</p>
+            <p className="itemDescription__description">
+            {movieDetail?.production_countries?.map((item) => item.name).join(", ")}
+            </p>
           </div>
           <div className="itemDescription">
             <p className="itemDescription__title">Genre:</p>
-            <p className="itemDescription__description">Drama, Science Fiction</p>
+            <p className="itemDescription__description">
+              {movieDetail?.genres?.map((item) => item.name).slice(0,3).join(",")}
+            </p>
           </div>
           <div className="itemDescription">
             <p className="itemDescription__title">Date Release:</p>
-            <p className="itemDescription__description">May 05 2023</p>
+            <p className="itemDescription__description">{movieDetail?.release_date}</p>
           </div>
           <div className="itemDescription">
             <p className="itemDescription__title">Production:</p>
-            <p className="itemDescription__description">AMC Studios</p>
+            <p className="itemDescription__description">
+              {movieDetail?.production_countries?.map((item) => item.name).join(", ")}
+            </p>
           </div>
           <div className="itemDescription">
             <p className="itemDescription__title">Cast:</p>
-            <p className="itemDescription__description">Tim Robbins, Rebecca Ferguson, Avi Nash, Rashida Jones, David Oyewolo, Tim Robbins</p>
+            <p className="itemDescription__description">
+              {movieDetail?.credits?.cast?.map((item) => item.name).join(", ")}
+            </p>
           </div>
         </div>
       </div>

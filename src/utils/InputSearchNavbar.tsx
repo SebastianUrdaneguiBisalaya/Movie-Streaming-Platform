@@ -5,7 +5,6 @@ import { debounce } from "../utils/debounce";
 export default function InputSearchNavbar(): JSX.Element {
   const {setSearchQuery} = useSearchMovie();
   const [valueSearch, setValueSearch] = useState<string>('');
-
   const handleSearch = ():void => {
     setSearchQuery(valueSearch)
   }
