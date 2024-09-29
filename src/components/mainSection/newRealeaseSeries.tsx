@@ -1,7 +1,7 @@
 import { RenderReleases } from "../../utils/renderReleases";
-import { type DataItem } from "../../types/types";
+import { type Serie } from "../../types/types";
 
-export const NewReleaseSeries = ({newReleasesSeries}:{newReleasesSeries: DataItem[]}): JSX.Element => {
+export const NewReleaseSeries = ({newReleasesSeries}:{newReleasesSeries: Serie[]}): JSX.Element => {
   return (
     <RenderReleases
       title="New Release - Series"

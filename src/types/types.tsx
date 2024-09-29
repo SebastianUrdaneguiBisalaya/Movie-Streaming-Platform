@@ -15,6 +15,13 @@ export type Movie = {
   vote_count: number;
 };
 
+export type MovieApiResponse = {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+};
+
 export type Movies = {
   genres: string[];
   id: number;
@@ -50,6 +57,13 @@ export type Series = {
   first_air_date: string;
 };
 
+export type SeriesApiResponse = {
+  page: number;
+  results: Serie[];
+  total_pages: number;
+  total_results: number;
+};
+
 export type PropsCardTrending = {
   id: number;
   name: string;
@@ -73,9 +87,17 @@ export type Genres = {
   name: string;
 };
 
+export type GenresResponse = {
+  page: number;
+  genres: Genres[];
+  total_pages: number;
+  total_results: number;
+}
+
+
 export type PropCard = {
   id?: number;
-  title: string;
+  title?: string;
   poster_path: string;
   vote_average: number;
   episode?: string;
@@ -90,7 +112,7 @@ export type PropReleases = {
 
 export interface DataItem {
   id: number;
-  title: string;
+  title?: string;
   vote_average: number;
   category: string;
   poster_path: string;
