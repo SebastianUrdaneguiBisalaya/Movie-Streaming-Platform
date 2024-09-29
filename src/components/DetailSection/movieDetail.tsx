@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { type MovieDetailType } from "../../types/types";
 import { useNavigate } from "react-router-dom";
+import { LazyImage } from "../../utils/LazyImage";
 
 export const MovieDetail = ({id}:{id: number}) => {
   
@@ -43,7 +44,7 @@ export const MovieDetail = ({id}:{id: number}) => {
   return (
     <div className="movieDetailGrid">
       <div className="movieDetailGrid__image">
-        <img src={`https://image.tmdb.org/t/p/w500/${movieDetail?.poster_path}`} alt="" />
+        <LazyImage src={`https://image.tmdb.org/t/p/w500/${movieDetail?.poster_path}`} alt="" />
       </div>
 
       <div className="movieDetailGrid__container">  

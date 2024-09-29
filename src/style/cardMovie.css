@@ -47,6 +47,8 @@
 }
 
 .cardModelBasicMovie__detailEpisode {
+  display: flex;
+  height: fit-content;
   position: relative;
   padding: 0.3rem;
   left: 1rem;

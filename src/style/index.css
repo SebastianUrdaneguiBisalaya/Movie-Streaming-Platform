@@ -50,6 +50,10 @@ h3 {
   color: var(--color-white);
 }
 
+a {
+  text-decoration: none;
+}
+
 .button {
   background: transparent;
   cursor: pointer;

@@ -57,6 +57,8 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  height: fit-content;
+  align-items: center;
   padding: 1rem;
 }
 

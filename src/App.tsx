@@ -6,8 +6,8 @@ import { ScrollToTop } from "./utils/scrollToTop";
 function App() {
   return (
     <>
-      <Navbar />
       <ScrollToTop />
+      <Navbar />
       <Outlet />
     </>
   );

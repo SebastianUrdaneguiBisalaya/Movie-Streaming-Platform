@@ -29,9 +29,9 @@ export default function Navbar(): JSX.Element {
             <ItemsNavbar titleItem="Genre" path="/" />
             <ItemsNavbar titleItem="Country" path="/" />
             <InputSearchNavbar />
-            <ItemsNavbar titleItem="Movies" path="/" />
-            <ItemsNavbar titleItem="Series" path="/" />
-            <ItemsNavbar titleItem="Animation" path="/" />
+            <ItemsNavbar titleItem="Movies" path="/movies" />
+            <ItemsNavbar titleItem="Series" path="/series" />
+            <ItemsNavbar titleItem="Animation" path="/animation" />
             <div className="navbar__itemsMore">
               <ItemsNavbar titleItem="Login" path="/" />
               /

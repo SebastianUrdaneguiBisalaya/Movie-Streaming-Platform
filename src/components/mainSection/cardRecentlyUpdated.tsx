@@ -1,5 +1,6 @@
 import { type Series } from "../../types/types";
 import { Link } from "react-router-dom";
+import { LazyImage } from "../../utils/LazyImage";
 
 export const CardRecentlyUpdated = ({
   id,
@@ -11,7 +12,7 @@ export const CardRecentlyUpdated = ({
   return (
     <Link to={`detail/${id}`} className="cardMovie__recentlyUpdated">
       <div className="cardMovie__recentlyUpdated--img">
-        <img src={poster_path} alt="" />
+        <LazyImage src={poster_path} alt="" />
       </div>
       <div className="cardMovie__recentlyUpdated--detail">
         <h4>{name}</h4>

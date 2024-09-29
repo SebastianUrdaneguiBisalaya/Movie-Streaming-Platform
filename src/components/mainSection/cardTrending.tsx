@@ -1,5 +1,6 @@
 import { type PropsCardTrending } from "../../types/types";
 import { Link } from "react-router-dom";
+import { LazyImage } from "../../utils/LazyImage";
 
 export const CardTrending = ({
   id,
@@ -12,7 +13,7 @@ export const CardTrending = ({
   return (
     <div className="cardMovie__trending">
       <Link to={`detail/${id}`} className="cardMovie__trending--button">
-        <img
+        <LazyImage
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
           alt="Poster Path of the movie"
         />

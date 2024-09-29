@@ -1,5 +1,6 @@
 import { type PropCard } from "../../types/types";
 import { Link } from "react-router-dom";
+import { LazyImage } from "../../utils/LazyImage";
 
 export const CardMovie = ({
   id,
@@ -8,13 +9,13 @@ export const CardMovie = ({
   poster_path,
   vote_average,
   episode,
-}: PropCard) => {
+}: PropCard) : JSX.Element => {
   return (
     <div className="cardModelBasicMovie__containerCard">
       <Link to={`/detail/${id}`}
         className={episode ? "cardModelBasicSeries" : "cardModelBasicMovie"}
       >
-        <img
+        <LazyImage
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
           alt=""
           className={episode ? "cardSeries" : ""}

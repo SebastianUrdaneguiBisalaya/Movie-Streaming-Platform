@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { type MovieComment } from "../../types/types"
+import { LazyImage } from "../../utils/LazyImage";
 
 export const MovieComments = ({id}:{id: number}) => {
   const [comments, setComments] = useState<MovieComment[]>([]);
@@ -38,7 +39,7 @@ export const MovieComments = ({id}:{id: number}) => {
         comments.map((item) => (
           <div key={item.id} className="movieComments__container">
             <div className="movieComments__container--firstColumn">
-            <img className="movieComments__container--image" src={item.author_details.avatar_path ? `https://image.tmdb.org/t/p/w500/${item.author_details.avatar_path}` : `https://img1.pnghut.com/10/19/1/UjALtMK6NB/ico-silhouette-neck-head-shot-royaltyfree.jpg`} alt="" />
+            <LazyImage className="movieComments__container--image" src={item.author_details.avatar_path ? `https://image.tmdb.org/t/p/w500/${item.author_details.avatar_path}` : `https://img1.pnghut.com/10/19/1/UjALtMK6NB/ico-silhouette-neck-head-shot-royaltyfree.jpg`} alt="" />
             </div>
             <div className="movieComments__container--secondColumn">
               <p>{item?.author}</p>
