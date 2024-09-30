@@ -16,7 +16,8 @@ export const CardCarrousel = ({
       <LazyImage
         className="herosection__background"
         src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
-        alt=""
+        alt="Poster Path"
+        data-src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
       />
       <div className="herosection__overlay"></div>
       <div className="herosection__content">

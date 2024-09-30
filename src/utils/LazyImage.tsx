@@ -29,6 +29,7 @@ export const LazyImage = ({src, alt, className}: {src: string, alt: string, clas
         alt={alt}
         loading="lazy"
         className={className}
+        data-src={src}
         />
     )
 }
