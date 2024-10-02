@@ -123,7 +123,7 @@ export default function Navbar(): JSX.Element {
       ></div>
 
       {
-        isOpenSignIn && (<SignIn setIsOpenSignIn={setIsOpenSignIn}/>)
+        isOpenSignIn && (<SignIn setIsOpenSignIn={setIsOpenSignIn} setIsOpenSignUp={setIsOpenSignUp}/>)
       }
 
       {isOpenSignUp && (<SignUp setIsOpenSignUp={setIsOpenSignUp}/>)}

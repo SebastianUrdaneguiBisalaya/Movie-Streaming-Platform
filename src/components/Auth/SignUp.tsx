@@ -1,4 +1,36 @@
+import { useState } from "react";
+
 export const SignUp = ({setIsOpenSignUp}:{setIsOpenSignUp: React.Dispatch<React.SetStateAction<boolean>>}) => {
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [isLoading, setIsLoading] = useState(false)
+    const [existUser, setExistUser] = useState(false);
+
+
+    const handleSignUp = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setIsLoading(true);
+        setTimeout(() => {
+            try {
+                const resultLocalStorage = localStorage.getItem("userMovieStreaming");
+                if (resultLocalStorage) {
+                    setExistUser(true);
+                    return;
+                }
+                const user = {
+                    username: username,
+                    password: password,
+                }
+                localStorage.setItem("userMovieStreaming", JSON.stringify(user));
+            } catch (error) {
+                throw new Error(`Username or password is incorrect ${error}`);
+            } finally {
+                setIsLoading(false);
+            }
+        }, 2000)
+    }
+
     return (
       <div className="modal__signIn">
           <div className="modal__signIn--container">
@@ -10,13 +42,20 @@ export const SignUp = ({setIsOpenSignUp}:{setIsOpenSignUp: React.Dispatch<React.
                   </div>
                   <h4 className="modal__title">Welcome to Movie Streaming Platform! 🔥</h4>
                   <p className="modal__section">Sign Up</p>
-                  <label htmlFor="email">Email</label>
-                  <input className="modal__input--email" id="email" type="text" placeholder="youremail@gmail.com" />
-                  <label htmlFor="password">Password</label>
-                  <input className="modal__input--password" id="password" type="password" placeholder="yourpassword"/>
-                  <div className="modal__button--login">
-                      <button className="button__login">I want to register</button>
-                  </div>
+                  <form className="modal__form" action="" onSubmit={handleSignUp}>
+                    <label htmlFor="email">Email</label>
+                    <input className="modal__input--email" id="email" required type="text" placeholder="youremail@gmail.com" onChange={(event) => setUsername(event.target.value)}/>
+                    <label htmlFor="password">Password</label>
+                    <input className="modal__input--password" id="password" required type="password" placeholder="yourpassword" onChange={(event) => setPassword(event.target.value)}/>
+                    <div className="modal__button--login">
+                        <button type="submit" className="button__login">{`${isLoading ? "Loading..." : "I want to register"}`}</button>
+                    </div>
+                  </form>
+                  {
+                    existUser && (
+                        <h5>You don't need to create a new account because you already have an account with us! 🥳</h5>
+                    )
+                  }
               </div>
           </div>
       </div>
