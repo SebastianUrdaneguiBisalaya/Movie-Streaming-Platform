@@ -176,3 +176,13 @@ export type MovieComment = {
   updated_at: string,
   url: string
 }
+
+export type UserData = {
+  username: string,
+  password: string,
+}
+
+export type UserDataContextType = {
+  userData : UserData[],
+  setUserData: (userData: UserData[]) => void
+}
