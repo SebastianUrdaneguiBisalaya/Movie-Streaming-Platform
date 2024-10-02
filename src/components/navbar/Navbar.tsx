@@ -1,9 +1,13 @@
 import { ItemsNavbar } from "../../utils/ItemsNavbar";
 import InputSearchNavbar from "../../utils/InputSearchNavbar";
 import { useEffect, useState } from "react";
+import { SignIn } from "../Auth/SignIn";
+import { SignUp } from "../Auth/SignUp";
 
 export default function Navbar(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenSignIn, setIsOpenSignIn] = useState(false);
+  const [isOpenSignUp, setIsOpenSignUp] = useState(false);
   const closeSideBar = () => {
     setIsOpen(false);
   };
@@ -33,9 +37,11 @@ export default function Navbar(): JSX.Element {
             <ItemsNavbar titleItem="Series" path="/series" />
             <ItemsNavbar titleItem="Animation" path="/animation" />
             <div className="navbar__itemsMore">
-              <ItemsNavbar titleItem="Login" path="/" />
+              {/* <ItemsNavbar titleItem="Login" path="/" /> */}
+              <button className="buttontoAuth" onClick={() => {setIsOpenSignIn(true)}}>Login</button>
               /
-              <ItemsNavbar titleItem="Signup" path="/" />
+              {/* <ItemsNavbar titleItem="Signup" path="/" /> */}
+              <button className="buttontoAuth" onClick={() => {setIsOpenSignUp(true)}}>Sign Up</button>
               &nbsp;&nbsp;
               <svg
                 width="14"
@@ -65,13 +71,15 @@ export default function Navbar(): JSX.Element {
           <ItemsNavbar titleItem="Home" path="/" />
           <ItemsNavbar titleItem="Genre" path="/" />
           <ItemsNavbar titleItem="Country" path="/" />
-          <ItemsNavbar titleItem="Movies" path="/" />
-          <ItemsNavbar titleItem="Series" path="/" />
-          <ItemsNavbar titleItem="Animation" path="/" />
+          <ItemsNavbar titleItem="Movies" path="/movies" />
+          <ItemsNavbar titleItem="Series" path="/series" />
+          <ItemsNavbar titleItem="Animation" path="/animation" />
           <div className="navbar__itemsMore">
-            <ItemsNavbar titleItem="Login" path="/" />
+            {/* <ItemsNavbar titleItem="Login" path="/" /> */}
+            <button className="buttontoAuth" onClick={() => {setIsOpenSignIn(true)}}>Login</button>
             /
-            <ItemsNavbar titleItem="Signup" path="/" />
+            {/* <ItemsNavbar titleItem="Signup" path="/" /> */}
+            <button className="buttontoAuth" onClick={() => {setIsOpenSignUp(true)}}>Sign Up</button>
             &nbsp;&nbsp;
             <svg
               width="14"
@@ -113,6 +121,12 @@ export default function Navbar(): JSX.Element {
         className={`overlay ${isOpen ? "active" : ""}`}
         onClick={closeSideBar}
       ></div>
+
+      {
+        isOpenSignIn && (<SignIn setIsOpenSignIn={setIsOpenSignIn}/>)
+      }
+
+      {isOpenSignUp && (<SignUp setIsOpenSignUp={setIsOpenSignUp}/>)}
     </>
   );
 }
