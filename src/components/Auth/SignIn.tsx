@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserDataContext } from "../../context/userData";
 
 export const SignIn = ({setIsOpenSignIn, setIsOpenSignUp}:{setIsOpenSignIn: React.Dispatch<React.SetStateAction<boolean>>, setIsOpenSignUp: React.Dispatch<React.SetStateAction<boolean>>}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const {setUserData} = useContext(UserDataContext);
 
     const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -21,6 +23,7 @@ export const SignIn = ({setIsOpenSignIn, setIsOpenSignUp}:{setIsOpenSignIn: Reac
                     password: password,
                 }
                 localStorage.setItem("userMovieStreaming", JSON.stringify(user));
+                setUserData([user]);
             } catch (error) {
                 throw new Error(`Username or password is incorrect ${error}`);
             } finally {

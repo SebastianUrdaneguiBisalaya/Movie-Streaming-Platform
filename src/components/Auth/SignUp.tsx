@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 
 export const SignUp = ({setIsOpenSignUp}:{setIsOpenSignUp: React.Dispatch<React.SetStateAction<boolean>>}) => {
 
@@ -6,7 +6,6 @@ export const SignUp = ({setIsOpenSignUp}:{setIsOpenSignUp: React.Dispatch<React.
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false)
     const [existUser, setExistUser] = useState(false);
-
 
     const handleSignUp = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
