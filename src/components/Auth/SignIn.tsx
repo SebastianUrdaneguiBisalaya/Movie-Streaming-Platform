@@ -24,6 +24,9 @@ export const SignIn = ({setIsOpenSignIn, setIsOpenSignUp}:{setIsOpenSignIn: Reac
                 }
                 localStorage.setItem("userMovieStreaming", JSON.stringify(user));
                 setUserData([user]);
+                console.log(user)
+                const prueba = JSON.parse(localStorage.getItem("userMovieStreaming")!);
+                console.log(prueba);
             } catch (error) {
                 throw new Error(`Username or password is incorrect ${error}`);
             } finally {
@@ -44,9 +47,9 @@ export const SignIn = ({setIsOpenSignIn, setIsOpenSignUp}:{setIsOpenSignIn: Reac
                 <p className="modal__section">Sign In</p>
                 <form action="" className="modal__form" onSubmit={handleSignIn}>
                     <label htmlFor="email">Email</label>
-                    <input className="modal__input--email" required id="email" type="text" placeholder="youremail@gmail.com" onChange={(event) => setUsername(event.target.value)} />
+                    <input className="modal__input--email" required id="email" type="text" autoComplete="email" placeholder="youremail@gmail.com" onChange={(event) => setUsername(event.target.value)} />
                     <label htmlFor="password">Password</label>
-                    <input className="modal__input--password" required id="password" type="password" placeholder="yourpassword" onChange={(event) => setPassword(event.target.value)}/>
+                    <input className="modal__input--password" required id="password" type="password" autoComplete="new-password" placeholder="yourpassword" onChange={(event) => setPassword(event.target.value)} />
                     <div className="modal__button--login">
                         <button type="submit" className="button__login">{`${isLoading ? "Loading..." : "Login"}`}</button>
                     </div>

@@ -1,16 +1,23 @@
 import { ItemsNavbar } from "../../utils/ItemsNavbar";
 import InputSearchNavbar from "../../utils/InputSearchNavbar";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { SignIn } from "../Auth/SignIn";
 import { SignUp } from "../Auth/SignUp";
+import { UserDataContext } from "../../context/userData";
 
 export default function Navbar(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenSignIn, setIsOpenSignIn] = useState(false);
   const [isOpenSignUp, setIsOpenSignUp] = useState(false);
+  const {userData, setUserData} = useContext(UserDataContext);
   const closeSideBar = () => {
     setIsOpen(false);
   };
+
+  const handleLogOut = () => {
+    setUserData([]);
+    localStorage.removeItem("userMovieStreaming");
+  }
 
   useEffect(() => {
     const handleRezise = () => {
@@ -37,11 +44,20 @@ export default function Navbar(): JSX.Element {
             <ItemsNavbar titleItem="Series" path="/series" />
             <ItemsNavbar titleItem="Animation" path="/animation" />
             <div className="navbar__itemsMore">
-              {/* <ItemsNavbar titleItem="Login" path="/" /> */}
-              <button className="buttontoAuth" onClick={() => {setIsOpenSignIn(true)}}>Login</button>
-              /
-              {/* <ItemsNavbar titleItem="Signup" path="/" /> */}
-              <button className="buttontoAuth" onClick={() => {setIsOpenSignUp(true)}}>Sign Up</button>
+              {
+                userData.length <= 0 ? (
+                  <>
+                    <button className="buttontoAuth" onClick={() => {setIsOpenSignIn(true)}}>Login</button>
+                    /
+                    <button className="buttontoAuth" onClick={() => {setIsOpenSignUp(true)}}>Sign Up</button>
+                  </>
+                ) : (
+                  <div className="greeting__container">
+                    <span className="greeting__name"><span className="greeting">Welcome</span> {userData[0].username}</span>
+                    <button onClick={() => handleLogOut()} className="button__logOut">Logout</button>
+                  </div>
+                )
+              }
               &nbsp;&nbsp;
               <svg
                 width="14"
@@ -75,11 +91,20 @@ export default function Navbar(): JSX.Element {
           <ItemsNavbar titleItem="Series" path="/series" />
           <ItemsNavbar titleItem="Animation" path="/animation" />
           <div className="navbar__itemsMore">
-            {/* <ItemsNavbar titleItem="Login" path="/" /> */}
-            <button className="buttontoAuth" onClick={() => {setIsOpenSignIn(true)}}>Login</button>
-            /
-            {/* <ItemsNavbar titleItem="Signup" path="/" /> */}
-            <button className="buttontoAuth" onClick={() => {setIsOpenSignUp(true)}}>Sign Up</button>
+            {
+              userData.length <= 0 ? (
+                <>
+                  <button className="buttontoAuth" onClick={() => {setIsOpenSignIn(true)}}>Login</button>
+                  /
+                  <button className="buttontoAuth" onClick={() => {setIsOpenSignUp(true)}}>Sign Up</button>
+                </>
+              ) : (
+                <div className="greeting__container">
+                  <span className="greeting__name"><span className="greeting">Welcome</span> {userData[0].username}</span>
+                  <button onClick={() => handleLogOut()} className="button__logOut">Logout</button>
+                </div>
+              )
+            }
             &nbsp;&nbsp;
             <svg
               width="14"

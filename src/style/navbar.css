@@ -152,3 +152,55 @@
 .buttontoAuth:hover {
   color: var(--color-red);
 }
+
+.greeting__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting {
+  color: var(--color-red);
+}
+
+.greeting__name {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.button__logOut {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: "Poppins";
+  height: 2rem;
+}
+
+.button__logOut:hover {
+  color: var(--color-red);
+  border: 1px solid var(--color-white);
+  border-radius: 1rem;
+}
+
+@media (min-width: 900px) {
+  .greeting__container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .button__logOut {
+    height: 100%;
+    margin-top: 0rem;
+  }
+
+  .button__logOut:hover {
+    padding: 0.5rem;
+  }
+}
