@@ -40,15 +40,33 @@ export const router = createBrowserRouter([
   },
   {
     path: "/movies",
-    element: <Movies />,
+    element: <ProtectedRouter />,
+    children: [
+      {
+        path: "/movies",
+        element: <Movies />,
+      }
+    ]
   },
   {
     path: "/series",
-    element: <Series />,
+    element: <ProtectedRouter />,
+    children: [
+      {
+        path: "/series",
+        element: <Series />,
+      }
+    ]
   },
   {
     path: "/animation",
-    element: <Animations />,
+    element: <ProtectedRouter />,
+    children: [
+      {
+        path: "/animation",
+        element: <Animations />,
+      }
+    ]
   },
   {
     path: "/*",

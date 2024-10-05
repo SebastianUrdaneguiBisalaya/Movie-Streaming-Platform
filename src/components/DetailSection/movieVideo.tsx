@@ -17,7 +17,7 @@ export const MovieVideo = ({id, title}:{id: number, title: string}) => {
                 throw new Error("Failed to fetch data")
             }
             const data = await response.json()
-            setVideo(data.results[data.results.length - 1].key);
+            setVideo(data.results[data.results.length - 1]?.key);
         }
 
         fetchVideo();
@@ -25,7 +25,7 @@ export const MovieVideo = ({id, title}:{id: number, title: string}) => {
 
   return (
     <div className="movieVideo__container">
-        <lite-youtube posterquality="maxresdefault" videoid={video} ></lite-youtube>
+        <lite-youtube className="lite-youtube-fallback" posterquality="maxresdefault" videoid={video} ></lite-youtube>
     </div>
   )
 }
