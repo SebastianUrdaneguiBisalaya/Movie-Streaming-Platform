@@ -9,11 +9,11 @@ import { router } from "./router/router.tsx";
 
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+
     <UserDataProvider>
       <SearchContextProvider>
         <RouterProvider router={router} />
       </SearchContextProvider>
     </UserDataProvider>
-  </StrictMode>
+
 );

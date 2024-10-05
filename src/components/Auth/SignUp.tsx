@@ -1,6 +1,6 @@
 import { useState} from "react";
 
-export const SignUp = ({setIsOpenSignUp}:{setIsOpenSignUp: React.Dispatch<React.SetStateAction<boolean>>}) => {
+export const SignUp = ({setIsOpenSignUp, setIsOpenSignIn}:{setIsOpenSignUp: React.Dispatch<React.SetStateAction<boolean>>, setIsOpenSignIn: React.Dispatch<React.SetStateAction<boolean>>}) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -30,6 +30,11 @@ export const SignUp = ({setIsOpenSignUp}:{setIsOpenSignUp: React.Dispatch<React.
         }, 2000)
     }
 
+    const handleGoToSignIn = () => {
+        setIsOpenSignUp(false);
+        setIsOpenSignIn(true);
+    }
+
     return (
       <div className="modal__signIn">
           <div className="modal__signIn--container">
@@ -55,6 +60,7 @@ export const SignUp = ({setIsOpenSignUp}:{setIsOpenSignUp: React.Dispatch<React.
                         <h5>You don't need to create a new account because you already have an account with us! 🥳</h5>
                     )
                   }
+                  <button className="button__goToSignIn" onClick={() => handleGoToSignIn()}>Go To Sign In</button>
               </div>
           </div>
       </div>

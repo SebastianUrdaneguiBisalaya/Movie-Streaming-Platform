@@ -1,11 +1,13 @@
 import { useState, useContext } from "react";
 import { UserDataContext } from "../../context/userData";
+import { useNavigate} from "react-router-dom";
 
 export const SignIn = ({setIsOpenSignIn, setIsOpenSignUp}:{setIsOpenSignIn: React.Dispatch<React.SetStateAction<boolean>>, setIsOpenSignUp: React.Dispatch<React.SetStateAction<boolean>>}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const {setUserData} = useContext(UserDataContext);
+    const navigate = useNavigate();
 
     const handleSignIn = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -24,9 +26,8 @@ export const SignIn = ({setIsOpenSignIn, setIsOpenSignUp}:{setIsOpenSignIn: Reac
                 }
                 localStorage.setItem("userMovieStreaming", JSON.stringify(user));
                 setUserData([user]);
-                console.log(user)
-                const prueba = JSON.parse(localStorage.getItem("userMovieStreaming")!);
-                console.log(prueba);
+                setIsOpenSignIn(false);
+                navigate("/");
             } catch (error) {
                 throw new Error(`Username or password is incorrect ${error}`);
             } finally {

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { type MovieComment } from "../../types/types"
 import { LazyImage } from "../../utils/LazyImage";
 
-export const MovieComments = ({id}:{id: number}) => {
+export const MovieComments = ({id, title}:{id: number, title: string}) => {
   const [comments, setComments] = useState<MovieComment[]>([]);
   const [expandedComments, setExpandedComments] = useState<{[key: string]:boolean}>({});
   const toggleReadMore = (id: string) => {
@@ -14,7 +14,8 @@ export const MovieComments = ({id}:{id: number}) => {
 
   useEffect(() => {
     const fetchComments = async () => {
-      const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/reviews?language=en-US&page=1`, {
+      const url = title != "" ? `https://api.themoviedb.org/3/movie/${id}/reviews?language=en-US&page=1` : `https://api.themoviedb.org/3/tv/${id}/reviews?language=en-US&page=1`
+      const response = await fetch(url, {
         method: "GET",
         headers: {
           accept: "application/json",
@@ -29,7 +30,7 @@ export const MovieComments = ({id}:{id: number}) => {
     }
 
     fetchComments();
-  }, [id])
+  }, [id, title])
 
   return (
     <div className="movieComments">

@@ -3,7 +3,7 @@ import { type MovieDetailType } from "../../types/types";
 import { useNavigate } from "react-router-dom";
 import { LazyImage } from "../../utils/LazyImage";
 
-export const MovieDetail = ({id}:{id: number}) => {
+export const MovieDetail = ({id, title}:{id: number, title: string}) => {
   
   const navigate = useNavigate();
   const [movieDetail, setMovieDetail] = useState<MovieDetailType>();
@@ -11,8 +11,9 @@ export const MovieDetail = ({id}:{id: number}) => {
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       try {
+        const url = title != "" ? `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits&language=en-US` : `https://api.themoviedb.org/3/tv/${id}?append_to_response=credits&language=en-US`
         const movieDetailResponse = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits&language=en-US`,
+          url,
           {
             method: "GET",
             headers: {
@@ -39,7 +40,7 @@ export const MovieDetail = ({id}:{id: number}) => {
     };
   
     fetchData();
-  }, [id, navigate]);
+  }, [id, title, navigate]);
 
   return (
     <div className="movieDetailGrid">
@@ -49,7 +50,7 @@ export const MovieDetail = ({id}:{id: number}) => {
 
       <div className="movieDetailGrid__container">  
         <div className="row row__1">
-            <h4>{movieDetail?.title}</h4>
+            <h4>{movieDetail?.title ? movieDetail?.title : movieDetail?.name}</h4>
             <button className="button__addFavorite">+ Add to Favorite</button>
         </div>
         

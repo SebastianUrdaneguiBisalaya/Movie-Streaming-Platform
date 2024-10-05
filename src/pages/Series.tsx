@@ -1,6 +1,7 @@
+import { SeriesComponent } from "../components/Series/SeriesComponent"
 
 export const Series = () => {
     return (
-      <div>Series</div>
+      <SeriesComponent/>
     )
   }

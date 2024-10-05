@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
+import '@justinribeiro/lite-youtube';
 
-export const MovieVideo = ({id}:{id: number}) => {
+export const MovieVideo = ({id, title}:{id: number, title: string}) => {
     const [video, setVideo] = useState<string>("");
     useEffect(() => {
         const fetchVideo = async () => {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, {
+            const url = title != "" ? `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US` : `https://api.themoviedb.org/3/tv/${id}/videos?language=en-US`
+            const response = await fetch(url, {
                 method: "GET",
                 headers: {
                     accept: "application/json",
@@ -19,11 +21,11 @@ export const MovieVideo = ({id}:{id: number}) => {
         }
 
         fetchVideo();
-    }, [id]);
+    }, [id, title]);
 
   return (
     <div className="movieVideo__container">
-        <lite-youtube videoid={video} ></lite-youtube>
+        <lite-youtube posterquality="maxresdefault" videoid={video} ></lite-youtube>
     </div>
   )
 }

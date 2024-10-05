@@ -6,6 +6,7 @@
     background-color: var(--color-less-black);
     transition: right 0.3s ease;
     z-index: 110;
+    padding: 0rem 1rem
 }
 
 .modal__signIn--container {
@@ -98,4 +99,18 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+.button__goToSignIn {
+    border: none;
+    background-color: transparent;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: "Poppins";
+    margin-top: 1rem;
+}
+
+.button__goToSignIn:hover {
+    color: var(--color-red)
 }

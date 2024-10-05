@@ -66,10 +66,10 @@ export type SeriesApiResponse = {
 
 export type PropsCardTrending = {
   id: number;
-  name: string;
+  title: string;
   tags: string[];
   poster_path: string;
-  first_air_date: string;
+  release_date: string;
   vote_average: number;
 };
 
@@ -153,6 +153,7 @@ export type CreditsCastMovie = {
 export type MovieDetailType = {
   id: number;
   title: string;
+  name?: string;
   overview: string;
   vote_average: number;
   release_date: string;

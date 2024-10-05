@@ -1,6 +1,7 @@
+import { MoviesComponent } from "../components/Movies/MoviesComponent"
 
 export const Movies = () => {
     return (
-      <div>Movies</div>
+      <MoviesComponent/>
     )
   }

@@ -3,7 +3,6 @@ import { ButtonViewAll } from "../../utils/buttonViewAll";
 import type {MoviesTrending } from "../../types/types";
 
 export const Trending = ({moviesTrending}:{moviesTrending: MoviesTrending[]}): JSX.Element => {
-  
   return (
     <section className="movie__trending">
       {moviesTrending?.length > 0 && (
@@ -21,10 +20,10 @@ export const Trending = ({moviesTrending}:{moviesTrending: MoviesTrending[]}): J
               <CardTrending
                 id={item.id}
                 key={index}
-                name={item.title}
+                title={item.title}
                 tags={item.genres}
                 poster_path={item.poster_path}
-                first_air_date={item.release_date}
+                release_date={item.release_date}
                 vote_average={item.vote_average}
               />
             ))}

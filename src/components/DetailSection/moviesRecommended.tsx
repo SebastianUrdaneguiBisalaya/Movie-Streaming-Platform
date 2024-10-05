@@ -2,12 +2,13 @@ import { Movie } from "../../types/types"
 import { useState, useEffect } from "react"
 import { CardMovie } from "../mainSection/cardMovie"
 
-export const MoviesRecommended = ({id}:{id: number}) => {
+export const MoviesRecommended = ({id, title}:{id: number, title: string}) => {
   const [moviesRecommended, setMoviesRecommended] = useState<Movie[]>([])
 
   useEffect(() => {
     const fetchMoviesRecommended = async () => {
-      const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?language=en-US&page=1`, 
+      const url = title != "" ? `https://api.themoviedb.org/3/movie/${id}/recommendations?language=en-US&page=1` : `https://api.themoviedb.org/3/tv/${id}/recommendations?language=en-US&page=1`
+      const response = await fetch(url, 
         {
           method: "GET",
           headers: {
@@ -24,7 +25,7 @@ export const MoviesRecommended = ({id}:{id: number}) => {
     }
 
     fetchMoviesRecommended()
-  }, [id])
+  }, [id, title])
 
   return (
     <div className="moviesToRecommend">
