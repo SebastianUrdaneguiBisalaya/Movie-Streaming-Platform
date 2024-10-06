@@ -116,7 +116,7 @@ export const MainSection = (): JSX.Element => {
 
   return (
     <>
-      <CarrouselMain movies={movies} />
+      <CarrouselMain movies={movies}/>
       <RecentlyUpdated recentlyUpdated={recentlyUpdated} />
       <Trending moviesTrending={moviesTrending}/>
       <NewReleaseMovies newReleasesMovies={newReleasesMovies}/>
