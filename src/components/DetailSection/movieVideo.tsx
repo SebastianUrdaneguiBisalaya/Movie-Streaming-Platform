@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import '@justinribeiro/lite-youtube';
 
 export const MovieVideo = ({id, title}:{id: number, title: string}) => {
     const [video, setVideo] = useState<string>("");
@@ -17,7 +16,6 @@ export const MovieVideo = ({id, title}:{id: number, title: string}) => {
                 throw new Error("Failed to fetch data")
             }
             const data = await response.json()
-            console.log(data.results[data.results.length - 1]?.key)
             setVideo(data.results[data.results.length - 1]?.key);
         }
 
@@ -26,7 +24,18 @@ export const MovieVideo = ({id, title}:{id: number, title: string}) => {
 
   return (
     <div className="movieVideo__container">
-        <lite-youtube className="lite-youtube-fallback" posterquality="maxresdefault" videoid={video} ></lite-youtube>
+        {
+            video !== "" && (
+                <iframe
+              src={`https://www.youtube.com/embed/${video}?autoplay=1&mute=1&loop=1&playlist=${video}`}
+              className="video-player"
+              allow="autoplay; encrypted-media"
+              frameBorder="0"
+              allowFullScreen
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+            )
+        }
     </div>
   )
 }

@@ -160,7 +160,9 @@ export type MovieDetailType = {
   genres: MovieGenreDetail[];
   poster_path: string;
   production_countries: MovieProductionCountryDetail[];
-  credits: CreditsCastMovie[];
+  credits: {
+    cast: CreditsCastMovie[]
+  };
 }
 
 export type MovieComment = {
