@@ -1,6 +1,9 @@
 import { type Movies } from "../../types/types";
+import { LazyImage } from "../../utils/LazyImage";
+import { Link } from "react-router-dom";
 
 export const CardCarrousel = ({
+  id,
   title,
   overview,
   release_date,
@@ -10,16 +13,17 @@ export const CardCarrousel = ({
 }: Movies) => {
   return (
     <div className="herosection">
-      <img
+      <LazyImage
         className="herosection__background"
         src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
-        alt=""
+        alt="Poster Path"
+        data-src={`https://image.tmdb.org/t/p/w500/${backdrop_path}`}
       />
       <div className="herosection__overlay"></div>
       <div className="herosection__content">
         <div className="herosection__callToActions">
           <div>
-            <button className="button__callToAction--now">
+            <Link to={`detail/${id}`} className="button__callToAction--now">
               Watch Now
               <svg
                 width="31"
@@ -33,7 +37,7 @@ export const CardCarrousel = ({
                   fill="white"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
           <button className="button__callToAction--later">
             Watch Later

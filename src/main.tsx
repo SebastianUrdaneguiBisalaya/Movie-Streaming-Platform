@@ -1,26 +1,19 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
 import "./style/index.css";
 import "@fontsource/poppins";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./pages/Home.tsx";
+import { RouterProvider} from "react-router-dom";
+import { SearchContextProvider } from "./context/searchMovieProvider.tsx";
+import { UserDataProvider } from "./context/userDataProvider.tsx";
+import { router } from "./router/router.tsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-    ],
-  },
-]);
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
+
+    <UserDataProvider>
+      <SearchContextProvider>
+        <RouterProvider router={router} />
+      </SearchContextProvider>
+    </UserDataProvider>
+
 );

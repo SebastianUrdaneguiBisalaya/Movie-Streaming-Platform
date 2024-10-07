@@ -9,6 +9,7 @@
 }
 
 .cardModelBasicMovie__containerCard {
+  width: 17rem;
   min-width: 17rem;
   min-height: 20.5rem;
   display: flex;
@@ -46,6 +47,8 @@
 }
 
 .cardModelBasicMovie__detailEpisode {
+  display: flex;
+  height: fit-content;
   position: relative;
   padding: 0.3rem;
   left: 1rem;
@@ -71,6 +74,16 @@
   justify-content: space-between;
   margin: 1rem 0rem;
   font-weight: 400;
+  width: 100%;
+}
+
+.cardModelBasicMovie__detail h5 {
+  margin: 0rem;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  text-align: left;
 }
 
 .cardModelBasicMovie__detail p {
@@ -94,4 +107,39 @@
 .cardModelBasicMovie__detailHD {
   background-color: var(--color-red);
   color: var(--color-white);
+}
+
+
+.cardModelBasicMovie__media {
+  position: relative;
+  width: 17rem;
+  height: 20.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: var(--color-white);
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.playButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.cardModelBasicMovie__containerCard img,
+.cardModelBasicMovie__containerCard video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

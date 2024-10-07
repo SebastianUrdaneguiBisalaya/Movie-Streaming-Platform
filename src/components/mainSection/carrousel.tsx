@@ -121,29 +121,6 @@ export const Carrousel = ({ movies, interval }: MovieCarrouselProps) => {
       )}
       {isAutoPlaying && (
         <>
-          {/* <div className="movie__carrousel--progress">
-                            <svg viewBox="0 0 36 36">
-                                <circle
-                                    r="16"
-                                    cx="18"
-                                    cy="18"
-                                    fill="none"
-                                    stroke="rgba(255, 255, 255, 0.2)"
-                                    strokeWidth="2"
-                                />
-                                <circle
-                                    r="16"
-                                    cx="18"
-                                    cy="18"
-                                    fill="none"
-                                    stroke="#FF0000"
-                                    strokeWidth="4"
-                                    strokeDasharray="100"
-                                    strokeDashoffset={100 - progress}
-                                    style={{animation: 'progress 1s linear infinite'}}
-                                />
-                            </svg>
-                        </div> */}
           <CarouselIndicators
             totalItems={totalItems}
             currentIndex={currentIndex}

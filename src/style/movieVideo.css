@@ -1,0 +1,21 @@
+.movieVideo__container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 40rem;
+    overflow: hidden;
+}
+
+lite-youtube {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width:800px) {
+    .movieVideo__container {
+        height: 20rem;
+    }
+}

@@ -1,0 +1,25 @@
+.section__searchMovie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem 0rem;
+}
+
+.search__container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0rem 2rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+}
+
+.movies__group {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 1rem;
+}

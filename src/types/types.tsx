@@ -15,6 +15,13 @@ export type Movie = {
   vote_count: number;
 };
 
+export type MovieApiResponse = {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+};
+
 export type Movies = {
   genres: string[];
   id: number;
@@ -43,17 +50,26 @@ export type Serie = {
 };
 
 export type Series = {
+  id: number
   name: string;
   overview: string;
   poster_path: string;
   first_air_date: string;
 };
 
+export type SeriesApiResponse = {
+  page: number;
+  results: Serie[];
+  total_pages: number;
+  total_results: number;
+};
+
 export type PropsCardTrending = {
-  name: string;
+  id: number;
+  title: string;
   tags: string[];
   poster_path: string;
-  first_air_date: string;
+  release_date: string;
   vote_average: number;
 };
 
@@ -71,9 +87,17 @@ export type Genres = {
   name: string;
 };
 
+export type GenresResponse = {
+  page: number;
+  genres: Genres[];
+  total_pages: number;
+  total_results: number;
+}
+
+
 export type PropCard = {
   id?: number;
-  title: string;
+  title?: string;
   poster_path: string;
   vote_average: number;
   episode?: string;
@@ -88,10 +112,96 @@ export type PropReleases = {
 
 export interface DataItem {
   id: number;
-  title: string;
+  title?: string;
   vote_average: number;
   category: string;
   poster_path: string;
   name?: string;
   episode?: string;
+}
+
+export interface SearchContextType {
+  searchQuery: string;
+  setSearchQuery: (query: string) => void;
+}
+
+export type MovieGenreDetail = {
+  id: number;
+  name: string
+}
+
+export type MovieProductionCountryDetail = {
+  iso_3166_1: string;
+  name: string;
+}
+
+export type CreditsCastMovie = {
+  adult: boolean,
+  gender: number,
+  id: number,
+  known_for_department: string,
+  name: string,
+  original_name: string,
+  popularity: number,
+  profile_path: string,
+  cast_id: number,
+  character: string,
+  credit_id: string,
+  order: number
+}
+
+export type MovieDetailType = {
+  id: number;
+  title: string;
+  name?: string;
+  overview: string;
+  vote_average: number;
+  release_date: string;
+  genres: MovieGenreDetail[];
+  poster_path: string;
+  production_countries: MovieProductionCountryDetail[];
+  credits: CreditsCastMovie[];
+}
+
+export type MovieComment = {
+  author: string,
+  author_details: {
+    name: string,
+    username: string,
+    avatar_path: null,
+    rating: number
+  },
+  content: string,
+  created_at: string,
+  id: string,
+  updated_at: string,
+  url: string
+}
+
+export type UserData = {
+  username: string,
+  password: string,
+}
+
+export type UserDataContextType = {
+  userData : UserData[],
+  setUserData: (userData: UserData[]) => void
+}
+
+export type MovieVideo = {
+  iso_639_1: string,
+  iso_3166_1: string,
+  name: string,
+  key: string,
+  site: string,
+  size: number,
+  type: string,
+  official: boolean,
+  published_at: string,
+  id: string
+}
+
+export type MovieVideoResponse = {
+  id: number,
+  results: MovieVideo[]
 }

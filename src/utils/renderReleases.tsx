@@ -1,11 +1,13 @@
 import { type PropReleases } from "../types/types";
-import { CardMovie } from "../components/mainSection/cardMovie";
+import { CardMovie } from "../components/mainSection/CardMovie";
 import { ButtonViewAll } from "./buttonViewAll";
 
 export const RenderReleases = ({ title, data, onClick }: PropReleases) => {
   return (
     <section className="movies__newRelease">
-      <div className="newRelease__container">
+      {
+        data.length > 0 && (
+          <div className="newRelease__container">
         <div className="newRelease__containerTitle">
           <h2>{title}</h2>
           <ButtonViewAll onClick={onClick} />
@@ -13,8 +15,9 @@ export const RenderReleases = ({ title, data, onClick }: PropReleases) => {
         <div>
           <div className="cardModelBasicMovie__container">
             <div className="cardModelBasicMovie__container--firstRow">
-              {data.map((item) => (
+              {data?.map((item) => (
                 <CardMovie
+                  id={item.id}
                   key={item.id}
                   title={item.title}
                   name={item.name}
@@ -26,6 +29,8 @@ export const RenderReleases = ({ title, data, onClick }: PropReleases) => {
           </div>
         </div>
       </div>
+        )
+      }
     </section>
   );
 };

@@ -1,16 +1,19 @@
 import { type PropsCardTrending } from "../../types/types";
+import { Link } from "react-router-dom";
+import { LazyImage } from "../../utils/LazyImage";
 
 export const CardTrending = ({
-  name,
+  id,
+  title,
   tags,
   poster_path,
-  first_air_date,
+  release_date,
   vote_average,
 }: PropsCardTrending): JSX.Element => {
   return (
     <div className="cardMovie__trending">
-      <button className="cardMovie__trending--button">
-        <img
+      <Link to={`detail/${id}?title=${encodeURIComponent(title || "")}`} className="cardMovie__trending--button">
+        <LazyImage
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
           alt="Poster Path of the movie"
         />
@@ -82,7 +85,7 @@ export const CardTrending = ({
                 />
               </svg>
             </span>
-            {first_air_date}
+            {release_date}
           </p>
           <p className="cardMovie__trending--detail--titles">
             <span>
@@ -102,10 +105,10 @@ export const CardTrending = ({
             {vote_average.toFixed(1)}
           </p>
         </div>
-      </button>
+      </Link>
       <div className="cardMovie__trending--moreDetails">
         <div className="cardMovie__trending--moreDetails--left">
-          <h3>{name}</h3>
+          <h3>{title}</h3>
         </div>
         <div className="cardMovie__trending--moreDetails--right">
           {tags.slice(0, 3)?.map((tag, index) => (
