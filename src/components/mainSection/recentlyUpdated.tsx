@@ -1,5 +1,5 @@
 import { useRef} from "react";
-import { CardRecentlyUpdated } from "./cardRecentlyUpdated";
+import { CardRecentlyUpdated } from "./CardRecentlyUpdated";
 import { Serie } from "../../types/types";
 
 export const RecentlyUpdated = ({recentlyUpdated}:{recentlyUpdated: Serie[]}): JSX.Element => {

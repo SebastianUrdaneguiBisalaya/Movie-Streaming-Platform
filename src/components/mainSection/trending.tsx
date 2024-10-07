@@ -1,4 +1,4 @@
-import { CardTrending } from "./cardTrending";
+import { CardTrending } from "./CardTrending";
 import { ButtonViewAll } from "../../utils/buttonViewAll";
 import type {MoviesTrending } from "../../types/types";
 
