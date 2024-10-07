@@ -1,4 +1,4 @@
-export * from "./tCarrouselMain";
+export * from "./CarrouselMain";
 export * from "./tRecentlyUpdated";
 export * from "./tTrending";
 export * from "./tNewReleaseMovies";
