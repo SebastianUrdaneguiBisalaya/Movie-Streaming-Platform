@@ -5,7 +5,6 @@ export const MovieVideo = ({id, title}:{id: number, title: string}) => {
     const [video, setVideo] = useState<string>("");
     useEffect(() => {
         const fetchVideo = async () => {
-            console.log("hola")
             const url = title != "" ? `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US` : `https://api.themoviedb.org/3/tv/${id}/videos?language=en-US`
             const response = await fetch(url, {
                 method: "GET",

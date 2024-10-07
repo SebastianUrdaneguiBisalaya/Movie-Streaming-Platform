@@ -40,7 +40,7 @@ export const MovieComments = ({id, title}:{id: number, title: string}) => {
         comments.map((item) => (
           <div key={item.id} className="movieComments__container">
             <div className="movieComments__container--firstColumn">
-            <LazyImage className="movieComments__container--image" src={item.author_details.avatar_path ? `https://image.tmdb.org/t/p/w500/${item.author_details.avatar_path}` : `https://img1.pnghut.com/10/19/1/UjALtMK6NB/ico-silhouette-neck-head-shot-royaltyfree.jpg`} alt="" />
+            <LazyImage className="movieComments__container--image" src={item.author_details.avatar_path ? `https://image.tmdb.org/t/p/w500/${item.author_details.avatar_path}` : `https://img1.pnghut.com/10/19/1/UjALtMK6NB/ico-silhouette-neck-head-shot-royaltyfree.jpg`} alt="Avatar of the author" />
             </div>
             <div className="movieComments__container--secondColumn">
               <p>{item?.author}</p>

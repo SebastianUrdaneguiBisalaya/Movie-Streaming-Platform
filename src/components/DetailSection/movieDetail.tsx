@@ -45,7 +45,7 @@ export const MovieDetail = ({id, title}:{id: number, title: string}) => {
   return (
     <div className="movieDetailGrid">
       <div className="movieDetailGrid__image">
-        <LazyImage src={`https://image.tmdb.org/t/p/w500/${movieDetail?.poster_path}`} alt="" />
+        <LazyImage src={`https://image.tmdb.org/t/p/w500/${movieDetail?.poster_path}`} alt="Poster path of movie" />
       </div>
 
       <div className="movieDetailGrid__container">  

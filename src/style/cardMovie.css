@@ -108,3 +108,38 @@
   background-color: var(--color-red);
   color: var(--color-white);
 }
+
+
+.cardModelBasicMovie__media {
+  position: relative;
+  width: 17rem;
+  height: 20.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: var(--color-white);
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.playButton:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.cardModelBasicMovie__containerCard img,
+.cardModelBasicMovie__containerCard video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
