@@ -1,3 +1,8 @@
+export type MovieResponse = {
+  page: number;
+  results: Movie[];
+}
+
 export type Movie = {
   adult: boolean;
   backdrop_path: string;
