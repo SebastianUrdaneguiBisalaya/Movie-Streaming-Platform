@@ -1,4 +1,4 @@
-import { Carrousel } from "./Carrousel";
+import { Carrousel } from "./tCarrousel";
 import type { Movies } from "../../types/types";
 
 export const CarrouselMain = ({movies}:{movies: Movies[]}) => {

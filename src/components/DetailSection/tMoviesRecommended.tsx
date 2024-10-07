@@ -1,6 +1,6 @@
 import { Movie } from "../../types/types"
 import { useState, useEffect } from "react"
-import { CardMovie } from "../mainSection/CardMovie"
+import { CardMovie } from "../mainSection/tCardMovie"
 
 export const MoviesRecommended = ({id, title}:{id: number, title: string}) => {
   const [moviesRecommended, setMoviesRecommended] = useState<Movie[]>([])

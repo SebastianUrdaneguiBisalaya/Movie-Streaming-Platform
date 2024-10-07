@@ -1,7 +1,7 @@
 import { debounceInfiniteScroll, get } from "../../services"
 import { useState, useEffect, useRef } from "react"
 import { PropCard, SeriesApiResponse } from "../../types/types"
-import { CardMovie } from "../mainSection/CardMovie"
+import { CardMovie } from "../mainSection/tCardMovie"
 
 export const SeriesComponent = () => {
   const [series, setSeries] = useState<PropCard[]>([])

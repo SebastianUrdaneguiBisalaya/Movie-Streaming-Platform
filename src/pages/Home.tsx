@@ -1,4 +1,4 @@
-import { MainSection } from "../components/mainSection/MainSection";
+import { MainSection } from "../components/mainSection/tMainSection";
 import { SearchMovies } from "../components/SearchMovie/SearchMovie";
 import { useSearchMovie } from "../hooks/useSearchMovie";
 import { useEffect } from "react";

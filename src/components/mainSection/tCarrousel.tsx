@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { CardCarrousel } from "./CardCarrousel";
+import { CardCarrousel } from "./tCardCarrousel";
 import { type Movies } from "../../types/types";
 
 type MovieCarrouselProps = {
