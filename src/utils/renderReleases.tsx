@@ -1,5 +1,5 @@
 import { type PropReleases } from "../types/types";
-import { CardMovie } from "../components/mainSection/cardMovie";
+import { CardMovie } from "../components/mainSection/CardMovie";
 import { ButtonViewAll } from "./buttonViewAll";
 
 export const RenderReleases = ({ title, data, onClick }: PropReleases) => {

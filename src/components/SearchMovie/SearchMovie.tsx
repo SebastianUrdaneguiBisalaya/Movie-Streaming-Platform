@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { type PropCard } from "../../types/types";
-import { CardMovie } from "../mainSection/cardMovie";
+import { CardMovie } from "../mainSection/CardMovie";
 import { useSearchMovie } from "../../hooks/useSearchMovie";
 
 export const SearchMovies = (): JSX.Element => {

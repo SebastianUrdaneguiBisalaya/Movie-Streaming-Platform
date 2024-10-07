@@ -1,6 +1,6 @@
 import { ButtonViewAll } from "../../utils/buttonViewAll";
 import { useState } from "react";
-import { CardMovie } from "./cardMovie";
+import { CardMovie } from "./CardMovie";
 import { type DataItem } from "../../types/types";
 
 export const TabRecommended = ({allRecommended}:{allRecommended: DataItem[]}): JSX.Element => {

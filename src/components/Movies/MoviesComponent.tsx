@@ -1,7 +1,7 @@
 import { debounceInfiniteScroll, get } from "../../services"
 import { useState, useEffect, useRef } from "react"
 import { Movie, MovieApiResponse } from "../../types/types"
-import { CardMovie } from "../mainSection/cardMovie"
+import { CardMovie } from "../mainSection/CardMovie"
 
 export const MoviesComponent = () => {
   const [movies, setMovies] = useState<Movie[]>([])
