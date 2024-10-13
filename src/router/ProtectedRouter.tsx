@@ -1,12 +1,25 @@
-import { Navigate, Outlet } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { Navigate, Outlet } from "react-router-dom";
 
 export const ProtectedRouter = () => {
-  const userData = localStorage.getItem("userMovieStreaming") || [];
+  const [userData, setUserData] = useState(null); 
+  const [isLoading, setIsLoading] = useState(true);
 
-  if (userData.length <= 0) {
-    return (
-      <Navigate to="/" replace/>
-    )
+  useEffect(() => {
+    const data = localStorage.getItem("userMovieStreaming");
+    if (data) {
+      setUserData(JSON.parse(data)); 
+    } 
+    setIsLoading(false);
+  }, [setUserData]);
+
+  if (isLoading) {
+    return;
   }
-  return <Outlet context={{userData}} />
-}
+
+  if (!userData) {
+    return <Navigate to="/" replace />;
+  }
+
+  return <Outlet context={{ userData }} />;
+};
